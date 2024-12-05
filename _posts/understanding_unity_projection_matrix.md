@@ -1,14 +1,13 @@
-
 ---
 title: 'Understanding Unity Projection Matrix'
 date: 2024-03-20
-permalink: /posts/2012/08/blog-post-1/
+permalink: /posts/understanding_unity_projection_matrix.md
 tags:
   - cool posts
-  - category1
-  - category2
+  - unity
+  - math
 ---
-
+# Understanding Unity Projection Matrix
 ## Matrix Tricks
 There are some tricks for Unity camera matrices we have to make clear here.
 First of all, unity camera space in the device is based on the right-hand coordinate. So the camera matrix will reverse z.
