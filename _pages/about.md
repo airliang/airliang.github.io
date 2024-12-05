@@ -7,6 +7,8 @@ redirect_from:
   - /about.html
 ---
 
-Hello! I am a graphic rendering programmer. I have been working in the game industry for more than 10 years.
-Here is my GitHub address: [airliang](https://github.com/airliang)
+Hello! I am a graphic rendering programmer has more than 20 years experience in graphic, game engine development. 
+This page will show my technical blogs including rendering, unity, mathmatics, etc.
 
+# Latest technical blogs
+[Understanding Unity Projection Matrix](_posts\understanding_unity_projection_matrix.md)
