@@ -11,4 +11,4 @@ Hello! I am a graphic rendering programmer has more than 20 years experience in 
 This page will show my technical blogs including rendering, unity, mathmatics, etc.
 
 # Latest technical blogs
-[Understanding Unity Projection Matrix](https://github.com/airliang/airliang.github.io/blob/master/_posts/understanding_unity_projection_matrix.md)
+[Understanding Unity Projection Matrix](../_posts/understanding_unity_projection_matrix.md)
