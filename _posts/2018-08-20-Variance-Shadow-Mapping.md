@@ -1,3 +1,8 @@
+---
+title: Variance Shadow Mapping
+tags: Rendering
+---
+
 # Variance Shadow Mapping
 ## Algorithm Overview
 ### Understand Chebyshev's Inequality
@@ -14,6 +19,9 @@ I think $x$ represents the real depth shading point. And $t$ represents the dept
 And then what $p_{max}$ means? Let me explain the [Chebychev’s inequality](https://calcworkshop.com/joint-probability-distribution/chebyshev-inequality/) below because I don't want to just know how to use it but fully understand it.
 See this picture(from [calcworkshop.com](https://calcworkshop.com/)).
 ![](vsm/Chebychev_inequality.png)
+<center>
+    <p><img src="img/vsm/Chebychev_inequality.png" align="center"></p>
+</center>
 In normal distribution, there is an empirical rule that we know the probability inside the multiple of standard derivation. As we see in the left picture, the empirical rule tells us about the probability of one standard derivation and two and three.
 But what about other distributions? As Calcworkshop.com says, we use Chebyshev’s inequality because it can be to any data set and a wide range of probability distributions, not just normal or bell-shaped curves!
 See the right picture above, it is the standard version of the Chebyshev’s inequality so it has two tail probability.
