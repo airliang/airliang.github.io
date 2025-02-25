@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "About"
-description: "嘿，你总算找到我啦"
+description: "Welcome to Airan's blog."
 header-img: "img/plane.jpg"
 ---
 
@@ -9,13 +9,12 @@ header-img: "img/plane.jpg"
     <p><img src="img/Zero.png" align="center"></p>
 </center>
 
-Ehhhh...I know it's not a good question.
+You found me!
 
-My Name is Azeril. You may find me in sites like douban.com / Goodreads.com / Facebook / Instagram / Twitter / Weibo.com, so on and so forth. It’s easy to know me. My short name is Az., quite easy to remember, right?
+My Name is Airan. I am a rendering programmer and I like sharing technical learning and thoughts.
 
-喜欢折腾的伪技术宅。一点点 geek，一丢丢的执著，就像吃烧烤时多少会撒一点孜然，恰到好处就够。日常之中，多的是折腾劲，也希望能添几分专注、几许勇敢。这就是我。
 
-——Azeril
+——Airan Liang
 
 
 > Live long and prosper
