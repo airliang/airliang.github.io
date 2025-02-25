@@ -7,7 +7,7 @@ tags: Rendering
 ### Understand Chebyshev's Inequality
 Before going to the implementation, we need to understand the following formulas.
 
-$\mu = E(x)= M_1$
+** \mu = E(x)= M_1 **
 
 $\sigma^2 = E(x^2) - E(x)^2 = M_2 - M_1$
 
@@ -19,7 +19,7 @@ And then what $p_{max}$ means? Let me explain the [Chebychev’s inequality](htt
 See this picture(from [calcworkshop.com](https://calcworkshop.com/)).
 ![](vsm/Chebychev_inequality.png)
 <center>
-    <p><img src="img/vsm/Chebychev_inequality.png" align="center"></p>
+    <p><img src="post_img/vsm/Chebychev_inequality.png" align="center"></p>
 </center>
 In normal distribution, there is an empirical rule that we know the probability inside the multiple of standard derivation. As we see in the left picture, the empirical rule tells us about the probability of one standard derivation and two and three.
 But what about other distributions? As Calcworkshop.com says, we use Chebyshev’s inequality because it can be to any data set and a wide range of probability distributions, not just normal or bell-shaped curves!
@@ -172,10 +172,10 @@ float ReduceLightBleeding(float pMax, float amount)
 Assigning a value amount, all the p less than this value will be set to zero, and the values larger than it will be remapped to [0, 1].
 
 ## Reference
-- [chebyshev-inequality] https://calcworkshop.com/joint-probability-distribution/chebyshev-inequality/ [1]
+- [chebyshev-inequality] (https://calcworkshop.com/joint-probability-distribution/chebyshev-inequality/) [1]
 
-- [William Donnelly Variance Shadow Maps] http://igm.univ-mlv.fr/~biri/Enseignement/MII2/Donnees/variance_shadow_maps.pdf [2]
+- [William Donnelly Variance Shadow Maps] (http://igm.univ-mlv.fr/~biri/Enseignement/MII2/Donnees/variance_shadow_maps.pdf) [2]
 
-- [NVidia summed area variance shadow maps] https://developer.nvidia.com/gpugems/gpugems3/part-ii-light-and-shadows/chapter-8-summed-area-variance-shadow-maps [3]
+- [NVidia summed area variance shadow maps] (https://developer.nvidia.com/gpugems/gpugems3/part-ii-light-and-shadows/chapter-8-summed-area-variance-shadow-maps) [3]
 
 - [Layered Variance Shadow Maps](https://dl.acm.org/doi/pdf/10.5555/1375714.1375739) [4]
