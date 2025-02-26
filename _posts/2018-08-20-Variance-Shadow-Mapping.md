@@ -7,9 +7,13 @@ tags: Rendering
 ### Understand Chebyshev's Inequality
 Before going to the implementation, we need to understand the following formulas.
 
-$\mu = E(x)= M_1$
+$$
+\begin{flalign}
+\mu = E(x)= M_1
+\end{flalign}
+$$
 
-$\sigma^2 = E(x^2) - E(x)^2 = M_2 - M_1$
+$ \sigma^2 = E(x^2) - E(x)^2 = M_2 - M_1 $
 
 $P(x \geq t) \leq p_{max}(t) \equiv \frac{\sigma^2}{\sigma^2 + (t - \mu)^2}$
 
