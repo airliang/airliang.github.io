@@ -29,10 +29,10 @@ LinkedIn: https://www.linkedin.com/in/liangairan/
 # use Github Flavored Markdown !important  
 # document: http://jekyllrb.com/docs/configuration/#kramdown  
 
-# markdown: kramdown
-kramdown:
-  input: GFM
-highlighter: rouge
+markdown: GFM
+#kramdown:
+#  input: GFM
+#highlighter: rouge
 
 gems: 
 - jekyll-paginate
