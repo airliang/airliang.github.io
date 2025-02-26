@@ -1,4 +1,3 @@
-
 ---
 title: Precompute Atmosphere Scattering
 tags: Rendering
@@ -106,8 +105,8 @@ $t_{R,M}(S,\lambda)=\beta_{R,M}^e(\lambda)\int_0^S\rho_{R,M}(s')ds'$
 
 Where $S$ is the distance of the transmittance.
 
-$\beta^{e}_{R} = \beta_R ,  
-\beta^{e}_{M} = \beta_M + \beta^{a}_M$
+$\beta^{e}_{R} = \beta_R $
+$\beta^{e}_{M} = \beta_M + \beta^{a}_M$
 
 ### Single Scattering
 There are infinite points can be scattered into the direction the eyes look at. So the scattering light reaches to the eye should be integrated by $\bf \it I_{S_{R,M}}$ , not only the scattering point to the eye but also the sunlight reaches to the scattering point.

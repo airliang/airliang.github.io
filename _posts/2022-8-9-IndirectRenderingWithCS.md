@@ -1,3 +1,8 @@
+---
+title: Indirect Rendering With Compute Shader
+tags: Rendering
+---
+
 # Indirect Rendering With Compute Shader
 ## Introduction to Indirect Rendering
 In conventional rendering, CPU decides the results of rendering. For example, if we are going to render instances, the number of instances is decided by cpu. 
