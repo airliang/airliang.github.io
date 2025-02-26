@@ -20,7 +20,7 @@ $$
 $$
 
 $ P(x \geq t) \leq p_{max}(t) \equiv \frac{\sigma^2}{\sigma^2 + (t - \mu)^2}$ 
-
+This is a simple inline equation: \( a^2 + b^2 = c^2 \)
 First we should know what \( x \) and $t$ represent.
 I think $x$ represents the real depth shading point. And $t$ represents the depth of the shading point in the shadowmap.
 And then what $p_{max}$ means? Let me explain the [Chebychev’s inequality](https://calcworkshop.com/joint-probability-distribution/chebyshev-inequality/) below because I don't want to just know how to use it but fully understand it.
