@@ -7,25 +7,21 @@ tags: Rendering
 ### Understand Chebyshev's Inequality
 Before going to the implementation, we need to understand the following formulas.
 
-$$
-\begin{align}
+$
 \mu = E(x)= M_1
-\end{align}
-$$
+$
 
 $$
-\begin{aligned}
 \sigma^2 = E(x^2) - E(x)^2 = M_2 - M_1 
-\end{aligned}
 $$
 
 $ P(x \geq t) \leq p_{max}(t) \equiv \frac{\sigma^2}{\sigma^2 + (t - \mu)^2}$ 
-This is a simple inline equation: \( a^2 + b^2 = c^2 \)
-First we should know what \( x \) and $t$ represent.
+
+First we should know what $x$ and $t$ represent.
 I think $x$ represents the real depth shading point. And $t$ represents the depth of the shading point in the shadowmap.
 And then what $p_{max}$ means? Let me explain the [Chebychev’s inequality](https://calcworkshop.com/joint-probability-distribution/chebyshev-inequality/) below because I don't want to just know how to use it but fully understand it.
 See this picture(from [calcworkshop.com](https://calcworkshop.com/)).
-![](vsm/Chebychev_inequality.png)
+![](post_img/vsm/Chebychev_inequality.png)
 <center>
     <p><img src="post_img/vsm/Chebychev_inequality.png" align="center"></p>
 </center>
@@ -49,12 +45,12 @@ If we use PCF to determine the probability p of a shading point, we know exactly
 Here comes a question. Why $E(x)$ is computed by the formula above? If we see $E(x)$ as the average depth, maybe we can imagine the equation well.
 As the paper[3] mentions, if the depth of the shading point is less than the $E(x)$, it is definitely not in the shadow, otherwise the visibility function is computed by the Chbyshelve equation.
 
-$`
+$
 P(x \geq t) \approx\begin{cases}
   1 \space \space \rm if \space t \leq \mu  \\
   \frac{\sigma^2}{\sigma^2 + (t-\mu)^2} \space \space \rm if \space t > \mu
 \end{cases}
-`$
+$
 
 What if $t >\mu$ or  $t \approx \mu$ ? As I have implemented in my project, we can see the result in the picture below.
 
@@ -119,10 +115,10 @@ Paper [3] gives us an example of the wrap function. And this may make object c c
 So how to make object b correct again? The author introduces layers. Different layers have different wrap functions. In the case above, if we put object c in layer 1, object b in layer 2, we can get the correct results.
 We define a layer has index i, covering an interval [pi, qi], we get the following wrap:
 
-$`\varphi_i(t) = \begin{cases}
+$\varphi_i(t) = \begin{cases}
   0 \space \space \space \rm if \space t \leq p_{i}  \\
   \frac{t-p_{i}}{q_{i} - p_{i}} \space \space \rm if \space p_{i} < t < q_{i}  \\ 1 \space \space \space \rm if \space q_{i} \leq t
-\end{cases}`$
+\end{cases}$
 
 I am not going to state more details about the algorithm because I don't think it is necessary if we choose EVSM.
 The remaining details of LVSM are the minimum variance for each layer, the layer overlaps and the Lloyd Relaxation Algorithm which defines the layer ranges.
