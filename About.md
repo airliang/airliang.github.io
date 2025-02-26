@@ -6,7 +6,7 @@ header-img: "img/plane.jpg"
 ---
 
 <center>
-    <p><img src="img/Zero.png" align="center"></p>
+    <p><img src="img/head.jpg" align="center"></p>
 </center>
 
 You found me!
