@@ -8,9 +8,9 @@ tags: Rendering
 Before going to the implementation, we need to understand the following formulas.
 
 $$
-\begin{flalign}
+\begin{align}
 \mu = E(x)= M_1
-\end{flalign}
+\end{align}
 $$
 
 $ \sigma^2 = E(x^2) - E(x)^2 = M_2 - M_1 $
