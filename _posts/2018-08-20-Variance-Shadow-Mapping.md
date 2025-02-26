@@ -15,7 +15,7 @@ $$
 
 $$
 \begin{aligned}
-&\sigma^2 = E(x^2) - E(x)^2 = M_2 - M_1 
+\sigma^2 = E(x^2) - E(x)^2 = M_2 - M_1 
 \end{aligned}
 $$
 
