@@ -13,11 +13,11 @@ $$
 \end{align}
 $$
 
-$ 
+$$
 \begin{aligned}
 &\sigma^2 = E(x^2) - E(x)^2 = M_2 - M_1 
 \end{aligned}
-$
+$$
 
 \( P(x \geq t) \leq p_{max}(t) \equiv \frac{\sigma^2}{\sigma^2 + (t - \mu)^2}`$ \)
 
