@@ -8,7 +8,7 @@ tags: Rendering
 Before going to the implementation, we need to understand the following formulas.
 
 \begin{align}
-\mu = E(x)= M_1$
+\mu = E(x)= M_1
 \end{align}
 
 $\sigma^2 = E(x^2) - E(x)^2 = M_2 - M_1$
