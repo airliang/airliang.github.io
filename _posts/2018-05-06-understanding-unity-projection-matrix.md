@@ -3,7 +3,8 @@ title: Understanding Unity Projection Matrix
 tags: Unity Math
 ---
 
-## Matrix Tricks
+## Understanding Unity Projection Matrix
+### Matrix Tricks
 There are some tricks for Unity camera matrices we have to make clear here.
 First of all, unity camera space in the device is based on the right-hand coordinate. So the camera matrix will reverse z.
 __Camera.worldToCameraMatrix__. This matrix will reverse z to -z. And also the view matrix in shader is using this matrix. Because unity uses the right coordinate as the view space.
@@ -11,7 +12,7 @@ __Camera.transform.worldToLocalMatrix__. We can consider this matrix as the stan
 __Camera.projectionMatrix__. This matrix transforms the coordinates from camera space to the clip space([-1,-1,-1], [1, 1, 1]), and reverses z to -z. Besides, it translates the z from -1 to 1.
 __GL.GetGPUProjectionMatrix()__. This function returns a matrix used in shader. Because Unity supports different graphics api. In opengl, the depth is in [-1, 1], while in DX or Vulkan, the depth is in [0, 1] or [1, 0]. So this function returns a matrix according to the current graphics api.
 
-## Coordinate Transform
+### Coordinate Transform
 Here is the case when using __Camera.worldToCameraMatrix__ as view matrix and __GL.GetGPUProjectionMatrix()__ as projection matrix.
 When we have the depth buffer and uv coordinates of the screen, how to translate the screen point to the real world matrix?
 First, get the depth value from the depth buffer.
