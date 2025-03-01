@@ -10,11 +10,11 @@ In path tracing, once the ray hits the surface, we need to estimate the direct l
 
 Mathematically, this is determined by the scattering equation:
 
-$$ L_o(X', \omega_o') = \int _{S^2}f_s(X', \omega_i' \rightarrow \omega_o')L_{e,i}(\omega_i')\rm d\sigma ^{\perp}(\omega_i') $$
+$ L_o(X', \omega_o') = \int _{S^2}f_s(X', \omega_i' \rightarrow \omega_o')L_{e,i}(\omega_i')\rm d\sigma ^{\perp}(\omega_i') $
 
-where $L_{e,}$ represents the incident radiance due to the area light source $S$.
+where $L_{e,i}$ represents the incident radiance due to the area light source $S$.
 
-There are two common strategies for Monte Carlo evaluation of the scattering equation. One is sampling BSDF , the other is sampling light radiance. Since we can only use one integrand function in Monte Carlo method. The scattering equation contains at least two functions in the integrand, which results in choosing one of the functions to estimate.
+There are two common strategies for Monte Carlo evaluation of the scattering equation. One is sampling BSDF, the other is sampling light radiance. Since we can only use one integrand function in Monte Carlo method. The scattering equation contains at least two functions in the integrand, which results in choosing one of the functions to estimate.
 
 ## Sampling the BSDF
 
