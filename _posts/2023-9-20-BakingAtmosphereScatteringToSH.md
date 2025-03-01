@@ -72,16 +72,16 @@ In this way, we can approximate the lighting function by projecting it into sphe
 According to Eric Bruneton's paper, it is very efficient to calculate the atmosphere scattering in real-time by using precomputed lookup tables. Due to this fact, it makes projecting atmosphere scattering into spherical harmonics coefficients possible, since we will execute this process only when the direction of the directional light is changed. 
 Considering the single scattering equation:
 
-$ I_{s_{R,M}}^{(1)}(P_O, V, L, \lambda) = I_i(\lambda)F_{R,M}(\theta) \frac{\beta_{R,M}}{4 \pi} \cdot \int _{P_a}^{P_b} \rho_{R,M}(h)exp(-t_{R,M}(PP_C, \lambda)-t_{R,M}(P_aP,\lambda))ds $    (7)
+$ I_{s_{R,M}}^{(1)}(P_O, V, L, \lambda) = I_i(\lambda)F_{R,M}(\theta) \frac{\beta_{R,M}}{4 \pi} \cdot \int_{P_a}^{P_b} \rho_{R,M}(h)exp(-t_{R,M}(PP_C, \lambda)-t_{R,M}(P_aP,\lambda))ds $    (7)
 
 We precompute the integral part of the equation into the 3-dimensional texture from which we sample in real-time rendering.
 If we take into account the multiple scattering, the real-time rendering is the same except the precomputation. Just see the k-order multiple scattering equation:
 
-$I_{s_{R,M}}^{(k)}(P_O, V, L, \lambda) = I_i(\lambda)F_{R,M}(\theta) \frac{\beta_{R,M}}{4 \pi} \cdot \int _{P_a}^{P_b} G^{(k-1)}(P, V, L, \lambda) \rho_{R,M}(h)exp(-t_{R,M}(PP_a, \lambda))ds $    (8)
+$I_{s_{R,M}}^{(k)}(P_O, V, L, \lambda) = I_i(\lambda)F_{R,M}(\theta) \frac{\beta_{R,M}}{4 \pi} \cdot \int_{P_a}^{P_b} G^{(k-1)}(P, V, L, \lambda) \rho_{R,M}(h)exp(-t_{R,M}(PP_a, \lambda))ds $    (8)
 
 Where
 
-$G^{(k-1)}(P, V, L, \lambda)=\int_{4 \pi} F_{R,M}(\theta)I^{k}_{S_{R,M}}(P,\omega, L, \lambda)d\omega $    (9)
+$G^{(k-1)}(P, V, L, \lambda)=\int_{4 \pi} F_{R,M}(\theta)I_{S_{R,M}}^{k}(P,\omega, L, \lambda)d\omega $    (9)
 
 In this case, the only difference is the result of the precompute 3-dimensional texture. It is not a problem whether we use single scattering or multiple scattering.
 ### 3.3 Parallel Prefix Sum
