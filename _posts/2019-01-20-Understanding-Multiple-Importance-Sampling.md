@@ -9,6 +9,7 @@ In path tracing, once the ray hits the surface, we need to estimate the direct l
 ![](post_img/understanding_multiple_importance_sampling/scattering_equation.png)
 
 Mathematically, this is determined by the scattering equation:
+
 $$ L_o(X', \omega_o') = \int _{S^2}f_s(X', \omega_i' \rightarrow \omega_o')L_{e,i}(\omega_i')\rm d\sigma ^{\perp}(\omega_i') $$
 
 where $L_{e,}$ represents the incident radiance due to the area light source $S$.
