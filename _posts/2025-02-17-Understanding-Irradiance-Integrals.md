@@ -21,7 +21,8 @@ Irradiance at a point $p$ with surface normal $n$ due to radiance over a set of 
 
 $E(p,n) = \int_{\Omega} L_i(p,\omega)|\cos \theta|\rm d\omega$
 
-![](post_img/math/divide_distance_square.PNG)*Irradiance at a point p is given by the integral of radiance times the cosine of the incident direction over the entire upper hemisphere above the point.*
+![](post_img/math/divide_distance_square.PNG)
+*Irradiance at a point p is given by the integral of radiance times the cosine of the incident direction over the entire upper hemisphere above the point.*
 
 The projected solid angle measure is related to the solid angle measure by
 
@@ -55,4 +56,5 @@ $$E(p,n) = \int_A L_i(p,\omega) \cos \theta_i\frac{{\rm d}A \cos\theta_o}{r^2}$$
 
 ## Summary
 Turning back to the question, the directional light radiance is sampled from a point in the light surface, so it needs be to divided by $r^2$. 
+
 While the indirect light radiance is sampled by a direction so it doesn't need to be divided by $r^2$.
