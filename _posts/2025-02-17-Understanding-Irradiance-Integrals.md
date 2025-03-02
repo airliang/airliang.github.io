@@ -22,7 +22,6 @@ Irradiance at a point $p$ with surface normal $n$ due to radiance over a set of 
 $E(p,n) = \int_{\Omega} L_i(p,\omega)|\cos \theta|\rm d\omega$
 
 ![](post_img/math/divide_distance_square.png)
-*Irradiance at a point p is given by the integral of radiance times the cosine of the incident direction over the entire upper hemisphere above the point.*
 
 The projected solid angle measure is related to the solid angle measure by
 
