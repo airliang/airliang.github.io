@@ -10,7 +10,7 @@ I will not focus the details on the paper and pay more attention to the whole un
 We should under the images which are shown on the paper.
 
 ![](post_img/LTC/lobe.PNG)
-![](post_img/LTC/lobe_brdf.PNG.PNG)
+![](post_img/LTC/lobe_brdf.PNG)
 
 The left image is the 2D lobe of the BRDF and the right image represents the 3D lobe of the BRDF. The more red the color is the more radiance it reflects. 
 
