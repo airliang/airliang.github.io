@@ -105,13 +105,14 @@ $t_{R,M}(S,\lambda)=\beta_{R,M}^e(\lambda)\int_0^S\rho_{R,M}(s')ds'$
 
 Where $S$ is the distance of the transmittance.
 
-$\beta^{e}_{R} = \beta_R $
-$\beta^{e}_{M} = \beta_M + \beta^{a}_M$
+$\beta_{R}^{e} = \beta_R $
+
+$\beta_{M}^{e} = \beta_M + \beta_M^{a}$
 
 ### Single Scattering
 There are infinite points can be scattered into the direction the eyes look at. So the scattering light reaches to the eye should be integrated by $\bf \it I_{S_{R,M}}$ , not only the scattering point to the eye but also the sunlight reaches to the scattering point.
 
-$I^{(1)}_{S_{R,M}}(P_O, V, L, \lambda) = I_I(\lambda) F_{R,M}(\theta) \frac{\beta_{R,M}(\lambda)}{4\pi}
+$I_{S_{R,M}}^{(1)}(P_O, V, L, \lambda) = I_I(\lambda) F_{R,M}(\theta) \frac{\beta_{R,M}(\lambda)}{4\pi}
 \cdot \int_{P_a}^{P_b} \rho_{R,M}(h) \exp(-t_{R,M}(PP_C, \lambda) - t_{R,M}(P_a P, \lambda)) ds$
 
 Where $P_c$ $P_b$ $P_a$ and $P_o$ can be described in this image:
