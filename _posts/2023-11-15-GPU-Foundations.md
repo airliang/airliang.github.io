@@ -65,6 +65,7 @@ There are two major architecture types being tile-based and immediate-mode rende
 ![](post_img/gpu_foundations/immediate_mode.png)
 
 __front-end stages__: before rasterization.
+
 __Back-end stages__: begin at rasterization.
 
 ### Tile Based Mode
@@ -102,4 +103,49 @@ When the shader program is executed, the number of vertex shaders always not equ
 ![](post_img/gpu_foundations/rtx_gpu_architechure.png)
 *GeForce RTX 40 Series GPUs*
 
+### Compute Pipeline
+There are only a few steps in the compute pipeline, with data flowing from input to output through the programmable compute shader stage.
+
+So the Compute Pipeline just has one stage: compute shader stage.
+
+## GPU Memory
+### Memory Types in GPU
+- Global Memory: The main memory accessible by all threads. It’s large but has high latency, making access optimization essential.
+- Registers: Each thread has its own set of registers, which offer extremely low-latency access. However, registers are limited, and excessive use can lead to “register spilling” where data overflows into slower global memory.
+- Local Memory: Private to each thread and has lower latency, used for storing local variables. However, excessive usage can reduce efficiency.
+- Shared Memory: Shared among threads within the same block (in CUDA), allowing rapid access for data sharing and intermediate calculations.
+- Constant Memory: Read-only memory that is accessible by all threads, optimized for situations where all threads read the same data.
+- Texture Memory: Special memory optimized for spatial locality and used primarily in graphics applications for data that requires interpolation or 2D spatial access.
+
+Here is another answer about gpu memory info from Quora:
+Short answer: Local memory is not real memory but an abstraction of global memory in case of NVIDIA GPUs and is used typically for register spills or when the SMs runs out of resources. They are cached and addressing is usually resolved by compiler. (read Page 133 in https://docs.nvidia.com/cuda/pdf/CUDA_C_Programming_Guide.pdf v10.2)
+
+Long Answer:
+GPUs offer different types of memories:
+1. Register file - very fast memory but limited (typically 1-4 cycles). Private to threads. Can be shared with different threads in a warp using shuffle instruction
+2. Shared Memory - fast scratchpad memory (few KBs and is in 1–4 cycles). Private to thread block. In modern GPUs (like Volta) this memory is shared with L1 cache.
+3. Constant Memory - non-mutable memory (no writes allowed and fixed-size). Private to the kernel or program
+4. Texture Memory - non-mutable memory (no writes allowed and fixed-size). Private to the kernel or program
+5. L2 Cache - it is a cache shared by all threads across all SMs (200s cycles).
+6. Global Memory (and local memory resides here) - entire GPU memory or also called video memory (in GBs). Private to program or kernel. The difference between local memory and global memory is that local memory is private for the thread while the global memory is private for the kernel.
+
+What Memory to choose between shared/register/local?
+1. Use Shared memory whenever possible. If there is reuse in the same thread or across threads in a block, shared memory is the right place to the data.
+2. Of course, registers are fastest and should be used always but registers memory is limited and can easily get exhausted. When this happens, register spills occur. The spilled registers go to local memory.
+3. Local memory is used to hold automatic variables or arrays that require large structures or arrays whose index is not constant quantities. The compiler makes use of the local memory when it finds our there is not enough register space to hold variables. Now the local memory region may be cached in the memory hierarchy (no guarantee) but definitely exists in the global memory region. Thus the performance of local memory may not great. Specifically, for this reason, it is advised not to have register spillovers in your GPU code.
+
+## References
+https://www.bilibili.com/video/BV1u3411M72A/?spm_id_from=333.788&vd_source=0dd2cff1ee7ab1541a302289fb2e75b6 [1]
+
+https://ec.europa.eu/programmes/erasmus-plus/project-result-content/52dfac24-28e9-4379-8f28-f8ed05e225e0/lec03_gpu_architectures.pdf [2]
+
+https://electronics.stackexchange.com/questions/529562/difference-between-clock-cycle-machine-cycle-and-instruction-cycle-of-the-cpu [3]
+
+https://www.amd.com/system/files/documents/rdna-whitepaper.pdf [4]
+
+https://docs.nvidia.com/gameworks/content/developertools/desktop/analysis/report/cudaexperiments/kernellevel/achievedoccupancy.htm [5]
+
+https://flashypixels.wordpress.com/2018/11/10/intro-to-gpu-scalarization-part-1/ [6]
+
+https://www.techplayon.com/memory-management-in-gpu/ [7]
 
