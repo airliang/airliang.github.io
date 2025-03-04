@@ -81,13 +81,25 @@ Based on the description of [GPU architecture types explained](https://www.raste
 
 I quote the saying from [GPU architecture types explained](https://www.rastergrid.com/blog/gpu-tech/2021/07/gpu-architecture-types-explained/):
 
-*In contrast, TBR GPUs write the primitive data off-chip into per-tile primitive bins which then are consumed by the subsequent per-tile operations issued in the second phase of the pipeline.*
-
-*However, as the back-end stages of the TBR GPU operate on a per-tile basis, all framebuffer data, including color, depth, and stencil data, is loaded and remains resident in the on-chip tile memory until all primitives overlapping the tile are completely processed, thus all fragment processing operations, including the fragment shader and the fixed-function per-fragment operations, can read and write these data without ever going off-chip.*
+>In contrast, TBR GPUs write the primitive data off-chip into per-tile primitive bins which then are consumed by the subsequent per-tile operations issued in the second phase of the pipeline.\
+>However, as the back-end stages of the TBR GPU operate on a per-tile basis, all framebuffer data, including color, depth, and stencil data, is loaded and remains resident in the on-chip tile memory until all primitives overlapping the tile are completely processed, thus all fragment processing operations, including the fragment shader and the fixed-function per-fragment operations, can read and write these data without ever going off-chip.
 
 
 -|IMR|TBR
 ---|---|--- 
 Advantages|<ul><li>In primitive assembly, GPU uses little external memory bandwidth storing and retrieving intermediate geometry</li></ul>|<ul><li>On-chip memory access reduces bandwidth for mobile platform in fragment processing
 Disadvantages|<ul><li>Require large memory and bandwidth in the fragment stage</li></ul>|<ul><li>Overlap primitive with tile needs additional storage</li><li>Large numbers of primitives cause latency since primitive binning requirement.</li></ul>|
+
+## GPU Pipeline Basics
+### Graphics Pipeline
+![](post_img/gpu_foundations/graphics_pipeline.png)
+This is the basic graphic pipeline in the GPU.
+
+When the shader program is executed, the number of vertex shaders always not equal to the number of pixel shaders. What if there is a fixed number of vertex shader and pixel shader processor designed by the GPU Architecture? This will cause bad performance of the GPU balance. So The GPU Graphics hardware improves a new method to fixed this problem. The Unified Shader, means that there is a sheduler to assign which unified shader should be used as vertex shader or pixel shader.
+
+![](post_img/gpu_foundations/shedule_shader.png)
+
+![](post_img/gpu_foundations/rtx_gpu_architechure.png)
+*GeForce RTX 40 Series GPUs*
+
 
