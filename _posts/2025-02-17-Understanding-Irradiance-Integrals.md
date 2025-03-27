@@ -6,7 +6,14 @@ tags: Math
 ## Question Description
 Recently, I had a question from my friend. Here is his question:
 
-![](post_img/math/divide_distance_square.png)
+__Sample Area point p within the light contribute to out radiance:__
+
+$L_{direct} = L_i(p,\omega) f_s \cos \theta_i\frac{\rm dA \cos\theta_o}{r^2} / pdf_{light}$
+
+__Sample a direction in hemisphere as indirect direction to contribute light radiance:__
+
+$L_{indirect} = L_i(p,\omega)f_s \cos\theta / pdf_{\omega}$
+
 
 Why do indirect light radiance not need to divide the distance square?
 
