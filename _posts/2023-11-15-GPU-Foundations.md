@@ -69,7 +69,7 @@ __front-end stages__: before rasterization.
 __Back-end stages__: begin at rasterization.
 
 ### Tile Based Mode
-![](post_img/gpu_foundations/immediate_mode.png)
+![](post_img/gpu_foundations/tilebase_mode.png)
 
 ### comparison
 Based on the description of [GPU architecture types explained](https://www.rastergrid.com/blog/gpu-tech/2021/07/gpu-architecture-types-explained/). We first need to look at the way how the two architectures access/exchange data throughout the pipeline.
