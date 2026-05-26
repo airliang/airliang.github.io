@@ -1,24 +1,18 @@
 ---
 layout: page
-title: "About"
-description: "Welcome to Airan's blog."
+title: "About me"
+description: "Resume"
 header-img: "img/plane.jpg"
 ---
 
-<center>
-    <p><img src="img/head.jpg" align="center"></p>
-</center>
+<p>
+    <a href="{{ site.baseurl }}/assets/resume/Resume_LIANGAIRAN.pdf" target="_blank" rel="noopener">Open resume in a new tab</a>
+</p>
 
-You found me!
-
-My Name is Airan. I am a rendering programmer and I like sharing technical learning and thoughts.
-
-
-——Airan Liang
-
-
-> Live long and prosper
-
-<center>
-    <p><img src="img/hacker.png" align="center"></p>
-</center>
+<iframe
+    src="{{ site.baseurl }}/assets/resume/Resume_LIANGAIRAN.pdf"
+    width="100%"
+    height="900"
+    style="border: 0;"
+    title="Airan Liang Resume">
+</iframe>
